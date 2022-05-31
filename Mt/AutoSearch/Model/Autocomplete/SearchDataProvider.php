@@ -122,11 +122,11 @@ class SearchDataProvider implements DataProviderInterface
             foreach ( $products->getItems() as $product )
             {
 
-                $image = $this->imageHelper->init($product, 'product_page_image_thumbnail')->getUrl();
+                $image = $this->imageHelper->init($product, 'product_page_image_thumbnail')->getUrls();
 
                 $resultItem = $this->itemFactory->create([
-                    'title'             => $product->getName(),
-                    'price'             => $this->priceCurrency->format($product->getPriceInfo()->getPrice('regular_price')->getAmount()->getValue(),false),
+                    'title03'             => $product->getName(),
+                    'pricetask03'             => $this->priceCurrency->format($product->getPriceInfo()->getPrice('regular_price')->getAmount()->getValue(),false),
                     'special_price'     => $this->priceCurrency->format($product->getPriceInfo()->getPrice('special_price')->getAmount()->getValue(),false),
                     'has_special_price' => $product->getSpecialPrice() > 0 ? true : false,
                     'image'             => $image,
