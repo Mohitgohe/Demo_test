@@ -125,12 +125,14 @@ class SearchDataProvider implements DataProviderInterface
 
 
                 $resultItem = $this->itemFactory->create([
-                    'title03'             => $product->getName(),
-                    'pricetask03'             => $this->priceCurrency->format($product->getPriceInfo()->getPrice('regular_price')->getAmount()->getValue(),false),
-                    'special_price_vm'     => $this->priceCurrency->format($product->getPriceInfo()->getPrice('special_price')->getAmount()->getValue(),false),
-                    'has_special_price_vm' => $product->getSpecialPrice() > 0 ? true : false,
-                    'image_vm'             => $image,
-                    'url_vm'               => $product->getProductUrl()
+
+                    'title03'              => $productng->getNameMg(),
+                    'pricetask03'          => $this->priceCurrency->format($productng->getPriceInfo()->getPrice('regular_price')->getAmount()->getValue(),false),
+                    'special_price_vm'     => $this->priceCurrency->format($productng->getPriceInfo()->getPrice('special_price')->getAmount()->getValue(),false),
+                    'has_special_price_vm' => $productng->getSpecialPrice() > 0 ? true : false,
+                    'image_vm'             => $imageNew,
+                    'url_vm'               => $productng->getProductUrl()
+
 
                 ]);
                 $result[]   = $resultItem;
