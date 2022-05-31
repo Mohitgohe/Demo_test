@@ -129,7 +129,7 @@ class SearchDataProvider implements DataProviderInterface
                     'price'             => $this->priceCurrency->format($product->getPriceInfo()->getPrice('regular_price')->getAmount()->getValue(),false),
                     'special_price_vm'     => $this->priceCurrency->format($product->getPriceInfo()->getPrice('special_price')->getAmount()->getValue(),false),
                     'has_special_price_vm' => $product->getSpecialPrice() > 0 ? true : false,
-                    'image_vm'             => $image,
+                    'image_vm_url'             => $image,
                     'url_vm'               => $product->getProductUrl()
                 ]);
                 $result[]   = $resultItem;
